@@ -1,7 +1,5 @@
 package animals;
 
-import java.util.Scanner;
-
 public class Kotik {
     private String name;
     private String voice;
@@ -120,20 +118,15 @@ public class Kotik {
         this.satiety += satiety;
         return satiety;
     }
+
     private void eat(int satiety, String foodName) {
+        this.satiety = eat(satiety);
+        System.out.println("Ест " + foodName + " - " + getSatiety());
     }
 
     private void eat() {
-        System.out.println("Покормите котика");
-        Scanner console = new Scanner(System.in);
-        this.satiety = console.nextInt();
-        while (this.satiety <= 0){
-            System.out.println("Не жадничайте");
-            this.satiety = console.nextInt();
-        }
-        String foodName = console.nextLine();
-        eat(this.satiety, foodName);
-        System.out.println("Ест " + foodName);
+        String[] foodName  = {"Fish", "Milk", "Chicken"};
+        eat((int) (Math.random() * 3) + 3, foodName[(int) (Math.random() * 3)]);
     }
 
     public String[] liveAnotherDay() {
