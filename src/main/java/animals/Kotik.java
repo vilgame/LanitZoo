@@ -1,6 +1,6 @@
 package animals;
 
-public class Kotik {
+public class Kotik extends Carnivorous {
     private String name;
     private String voice;
     private int satiety;
