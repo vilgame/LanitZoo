@@ -1,6 +1,6 @@
 package animals;
 
-public class Kotik extends Carnivorous {
+public class Kotik extends Carnivorous implements Run, Voice {
     private String name;
     private String voice;
     private int satiety;
@@ -21,6 +21,10 @@ public class Kotik extends Carnivorous {
         count++;
     }
 
+    @Override
+    public void run() {
+    }
+
     public String getName()
     {
         return name;
@@ -31,6 +35,7 @@ public class Kotik extends Carnivorous {
         this.name = name;
     }
 
+    @Override
     public String getVoice() {
         return voice;
     }
