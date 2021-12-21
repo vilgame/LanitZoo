@@ -8,15 +8,21 @@ public class Duck extends Herbivore implements Swim, Fly, Voice {
 
     @Override
     public void fly() {
+        System.out.println("Летаю на юг");
     }
 
     @Override
     public void swim() {
+        System.out.println("Плаваю на воде");
     }
 
     @Override
     public String getVoice() {
         return voice;
+    }
+
+    public void setVoice(String voice) {
+        this.voice = voice;
     }
 
     public int getSatiety() {
@@ -27,11 +33,7 @@ public class Duck extends Herbivore implements Swim, Fly, Voice {
     public boolean eat(Food food) {
         if (super.eat(food)) {
             this.satiety += food.getEnergy();
-            System.out.println("Inside = " + getSatiety());
-            return true;
         }
-        else {
-            return false;
-        }
+        return true;
     }
 }
