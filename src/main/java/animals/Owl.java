@@ -2,13 +2,13 @@ package animals;
 
 import food.Food;
 
-public class Eagle extends Carnivorous implements Fly, Voice {
+public class Owl extends Carnivorous implements Fly, Voice {
     private String voice;
     private int satiety;
 
     @Override
     public void fly() {
-        System.out.println("Летаю высоко в небе");
+        System.out.println("Летаю ночью");
     }
 
     @Override

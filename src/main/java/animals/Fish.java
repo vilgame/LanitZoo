@@ -14,10 +14,6 @@ public class Fish extends Carnivorous implements Swim {
         return satiety;
     }
 
-    public void setSatiety(int satiety) {
-        this.satiety = satiety;
-    }
-
     @Override
     public boolean eat(Food food) {
         if (super.eat(food)) {
