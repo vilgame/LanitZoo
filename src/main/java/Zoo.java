@@ -30,7 +30,7 @@ public class Zoo {
         System.out.println("Мышь: Сытость = " + mouse.getSatiety());
         owl.eat(meat);
         System.out.println("Сова: Сытость = " + owl.getSatiety());
-        mouse.run();
+        duck.run();
         owl.fly();
         System.out.println(worker.getVoice(owl));
         System.out.println(worker.getVoice(kotik));

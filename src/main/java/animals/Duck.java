@@ -2,7 +2,7 @@ package animals;
 
 import food.Food;
 
-public class Duck extends Herbivore implements Swim, Fly, Voice {
+public class Duck extends Herbivore implements Swim, Fly, Voice, Run {
     private String voice;
     private int satiety;
 
@@ -35,5 +35,10 @@ public class Duck extends Herbivore implements Swim, Fly, Voice {
             this.satiety += food.getEnergy();
         }
         return true;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Смешно бегаю");
     }
 }
