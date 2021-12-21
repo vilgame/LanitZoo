@@ -2,22 +2,12 @@ package animals;
 
 import food.Food;
 
-public class Kotik extends Carnivorous implements Run, Voice {
-    private String voice;
+public class Fish extends Carnivorous implements Swim {
     private int satiety;
 
     @Override
-    public void run() {
-        System.out.println("Тыгыдык");
-    }
-
-    @Override
-    public String getVoice() {
-        return voice;
-    }
-
-    public void setVoice(String voice) {
-        this.voice = voice;
+    public void swim() {
+        System.out.println("Плаваю под водой");
     }
 
     public int getSatiety() {
@@ -31,4 +21,5 @@ public class Kotik extends Carnivorous implements Run, Voice {
         }
         return true;
     }
+
 }

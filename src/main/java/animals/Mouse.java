@@ -2,13 +2,13 @@ package animals;
 
 import food.Food;
 
-public class Kotik extends Carnivorous implements Run, Voice {
+public class Mouse extends Herbivore implements Run, Voice {
     private String voice;
     private int satiety;
 
     @Override
     public void run() {
-        System.out.println("Тыгыдык");
+        System.out.println("Бегаю от кота");
     }
 
     @Override

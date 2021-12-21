@@ -2,13 +2,13 @@ package animals;
 
 import food.Food;
 
-public class Kotik extends Carnivorous implements Run, Voice {
+public class Owl extends Carnivorous implements Fly, Voice {
     private String voice;
     private int satiety;
 
     @Override
-    public void run() {
-        System.out.println("Тыгыдык");
+    public void fly() {
+        System.out.println("Летаю ночью");
     }
 
     @Override
