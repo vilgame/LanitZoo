@@ -1,45 +1,29 @@
-public class Zoo {
+import animals.*;
+import model.Aviary;
+import model.Size;
 
-    public static void main(String[] args) {
-//        Duck duck = new Duck();
-//        duck.setVoice("Кря");
-//        Owl owl = new Owl();
-//        owl.setVoice("Ух");
-//        Fish pike = new Fish();
-//        Kotik kotik = new Kotik();
-//        kotik.setVoice("Мяу");
-//        Mouse mouse = new Mouse();
-//        mouse.setVoice("Пи");
-//        Food grass = new Grass();
-//        Food meat = new Meat();
-//        Worker worker = new Worker();
-//        worker.feed(duck, meat);
-//        System.out.println("Утка: Сытость = " + duck.getSatiety());
-//        worker.feed(deer, grass);
-//        System.out.println("Олень: Сытость = " + deer.getSatiety());
-//        worker.feed(kotik, meat);
-//        System.out.println("Котик: Сытость = " + kotik.getSatiety());
-//        worker.feed(pike, grass);
-//        System.out.println("Щука: Сытость = " + pike.getSatiety());
-//        mouse.eat(grass);
-//        System.out.println("Мышь: Сытость = " + mouse.getSatiety());
-//        owl.eat(meat);
-//        System.out.println("Сова: Сытость = " + owl.getSatiety());
-//        duck.run();
-//        owl.fly();
-//        System.out.println(worker.getVoice(owl));
-//        System.out.println(worker.getVoice(kotik));
-//        System.out.println(worker.getVoice(mouse));
-//        Swim[] swimmers = createPond();
-//        for (Swim s : swimmers) {
-//            s.swim();
-//        }
-//    }
-//
-//    private static Swim[] createPond() {
-//        Swim[] swimmers = new Swim[2];
-//        swimmers[0] = new Duck();
-//        swimmers[1] = new Fish();
-//        return swimmers;
+public class Zoo {
+    private static Aviary<Carnivorous> carnivorousAviary = new Aviary<>(Size.MEDIUM);
+    private static Aviary<Herbivore> herbivoreAviary = new Aviary<>(Size.LARGE);
+
+    private static void fillCarnivorousAviary() {
+        carnivorousAviary.addAnimal(new Kotik("Котик"));
+        carnivorousAviary.addAnimal(new Fish("Щука"));
+        carnivorousAviary.addAnimal(new Owl("Сова"));
+    }
+
+    private static void fillHerbivoreAviary() {
+        herbivoreAviary.addAnimal(new Deer("Олень"));
+        herbivoreAviary.addAnimal(new Mouse("Мышь"));
+        herbivoreAviary.addAnimal(new Duck("Утка"));
+    }
+
+    private static Carnivorous getCarnivorous(String name) {
+        return carnivorousAviary.getAnimal(name);
+    }
+
+    private static Herbivore getHerbivore(String name) {
+        return herbivoreAviary.getAnimal(name);
     }
 }
+
