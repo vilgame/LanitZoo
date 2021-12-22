@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class Aviary<T extends Animal> {
     private Size size;
-    private HashMap<String, T> aviaryHashMap = new HashMap<>();
+    private HashMap<String, T> aviaryMap = new HashMap<>();
 
     public Aviary(Size size) {
         this.size = size;
@@ -21,16 +21,16 @@ public class Aviary<T extends Animal> {
     }
 
     public void setAviaryHashMap(HashMap<String, T> aviaryHashMap) {
-        this.aviaryHashMap = aviaryHashMap;
+        this.aviaryMap = aviaryHashMap;
     }
 
     public HashMap<String, T> getAviaryHashMap() {
-        return aviaryHashMap;
+        return aviaryMap;
     }
 
     public void addAnimal (T animal) {
         if(animal.getSize() == this.size){
-            aviaryHashMap.put(animal.getName(), animal);
+            aviaryMap.put(animal.getName(), animal);
         }
         else {
             throw new WrongSizeException();
@@ -38,12 +38,12 @@ public class Aviary<T extends Animal> {
     }
 
     public T getAnimal(String name) {
-        return aviaryHashMap.get(name);
+        return aviaryMap.get(name);
     }
 
     public boolean removeAnimal(String name) {
-        if(aviaryHashMap.containsKey(name)) {
-            aviaryHashMap.remove(name);
+        if(aviaryMap.containsKey(name)) {
+            aviaryMap.remove(name);
             return true;
         }
         else {
