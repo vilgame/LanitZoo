@@ -26,4 +26,3 @@ public class Zoo {
         return herbivoreAviary.getAnimal(name);
     }
 }
-
