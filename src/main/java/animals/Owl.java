@@ -1,7 +1,5 @@
 package animals;
 
-import food.Food;
-import food.WrongFoodException;
 import model.Size;
 
 public class Owl extends Carnivorous implements Fly, Voice {
@@ -34,17 +32,5 @@ public class Owl extends Carnivorous implements Fly, Voice {
 
     public int getSatiety() {
         return satiety;
-    }
-
-    @Override
-    public boolean eat(Food food) {
-        try {
-            if (super.eat(food)) {
-                this.satiety += food.getEnergy();
-            }
-        } catch (WrongFoodException e) {
-            e.printStackTrace();
-        }
-        return true;
     }
 }

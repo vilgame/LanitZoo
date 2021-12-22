@@ -1,7 +1,5 @@
 package animals;
 
-import food.Food;
-import food.WrongFoodException;
 import model.Size;
 
 public class Kotik extends Carnivorous implements Run, Voice {
@@ -33,17 +31,5 @@ public class Kotik extends Carnivorous implements Run, Voice {
 
     public int getSatiety() {
         return satiety;
-    }
-
-    @Override
-    public boolean eat(Food food) {
-        try {
-            if (super.eat(food)) {
-                this.satiety += food.getEnergy();
-            }
-        } catch (WrongFoodException e) {
-            e.printStackTrace();
-        }
-        return true;
     }
 }

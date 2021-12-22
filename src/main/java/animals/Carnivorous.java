@@ -12,9 +12,10 @@ public abstract class Carnivorous extends Animal{
     }
 
     @Override
-    public boolean eat(Food food) throws WrongFoodException {
+    public void eat(Food food) throws WrongFoodException {
         if(food instanceof Meat) {
-            return true;
+            Meat meat = new Meat();
+            satiety += meat.getEnergy();
         }
         else {
             throw new WrongFoodException();

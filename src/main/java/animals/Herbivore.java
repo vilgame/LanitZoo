@@ -11,9 +11,10 @@ public abstract class Herbivore extends Animal{
     }
 
     @Override
-    public boolean eat(Food food) throws WrongFoodException {
+    public void eat(Food food) throws WrongFoodException {
         if(food instanceof Grass) {
-            return true;
+            Grass grass = new Grass();
+            satiety += grass.getEnergy();
         }
         else {
             throw new WrongFoodException();

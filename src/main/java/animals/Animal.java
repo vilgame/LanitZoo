@@ -26,7 +26,7 @@ public abstract class Animal {
         return satiety;
     }
 
-    public abstract boolean eat(Food food) throws WrongFoodException;
+    public abstract void eat(Food food) throws WrongFoodException;
 
     @Override
     public boolean equals(Object o) {
