@@ -5,6 +5,11 @@ import food.Meat;
 
 public abstract class Carnivorous extends Animal{
 
+
+    public Carnivorous(String name) {
+        super(name);
+    }
+
     @Override
     public boolean eat(Food food) {
         if(food instanceof Meat) {
