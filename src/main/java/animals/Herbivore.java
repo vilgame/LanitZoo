@@ -2,6 +2,7 @@ package animals;
 
 import food.Food;
 import food.Grass;
+import food.WrongFoodException;
 
 public abstract class Herbivore extends Animal{
 
@@ -10,13 +11,12 @@ public abstract class Herbivore extends Animal{
     }
 
     @Override
-    public boolean eat(Food food) {
+    public boolean eat(Food food) throws WrongFoodException {
         if(food instanceof Grass) {
             return true;
         }
         else {
-            System.out.println("Травоядное не ест мясо");
-            return false;
+            throw new WrongFoodException();
         }
     }
 }

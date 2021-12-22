@@ -1,6 +1,7 @@
 package animals;
 
 import food.Food;
+import food.WrongFoodException;
 import model.Size;
 
 public class Fish extends Carnivorous implements Swim {
@@ -27,8 +28,12 @@ public class Fish extends Carnivorous implements Swim {
 
     @Override
     public boolean eat(Food food) {
-        if (super.eat(food)) {
-            this.satiety += food.getEnergy();
+        try {
+            if (super.eat(food)) {
+                this.satiety += food.getEnergy();
+            }
+        } catch (WrongFoodException e) {
+            e.printStackTrace();
         }
         return true;
     }

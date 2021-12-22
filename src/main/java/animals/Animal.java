@@ -1,6 +1,7 @@
 package animals;
 
 import food.Food;
+import food.WrongFoodException;
 import model.Size;
 
 import java.util.Objects;
@@ -25,7 +26,7 @@ public abstract class Animal {
         return satiety;
     }
 
-    public abstract boolean eat(Food food);
+    public abstract boolean eat(Food food) throws WrongFoodException;
 
     @Override
     public boolean equals(Object o) {

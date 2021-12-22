@@ -12,6 +12,14 @@ public class Aviary<T extends Animal> {
         this.size = size;
     }
 
+    public Size getSize() {
+        return size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
+    }
+
     public void setAviaryHashMap(HashMap<String, T> aviaryHashMap) {
         this.aviaryHashMap = aviaryHashMap;
     }
@@ -21,7 +29,12 @@ public class Aviary<T extends Animal> {
     }
 
     public void addAnimal (T animal) {
-        aviaryHashMap.put(animal.getName(), animal);
+        if(animal.getSize() == this.size){
+            aviaryHashMap.put(animal.getName(), animal);
+        }
+        else {
+            throw new WrongSizeException();
+        }
     }
 
     public T getAnimal(String name) {
@@ -36,15 +49,5 @@ public class Aviary<T extends Animal> {
         else {
             return false;
         }
-
-
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    public void setSize(Size size) {
-        this.size = size;
     }
 }
