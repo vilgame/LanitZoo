@@ -20,14 +20,6 @@ public class Aviary<T extends Animal> {
         this.size = size;
     }
 
-    public void setAviaryMap(HashMap<String, T> aviaryMap) {
-        this.aviaryMap = aviaryMap;
-    }
-
-    public HashMap<String, T> getAviaryMap() {
-        return aviaryMap;
-    }
-
     public void addAnimal (T animal) {
         if(animal.getSize() == this.size){
             aviaryMap.put(animal.getName(), animal);
